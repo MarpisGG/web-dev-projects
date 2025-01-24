@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/header-img.svg";
+import headerImg from "../assets/img/Marvell.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -50,24 +50,25 @@ export const Banner = () => {
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
+          <Col xs={12} md={6} xl={5}>
+            <TrackVisibility>              
+                <img src={headerImg} alt="Header Img"/>
+            </TrackVisibility>
+          </Col>
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Judy`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                <h1>{`Hi! I'm Marvell Christofer`} </h1>
+                <h1>
+                <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Cyber Security", "UI/UX Designer","Mobile Application Developer" ]'><span className="wrap">{text}</span></span>
+                  </h1>
+                  <p>I am an Informatics student at Universitas Multimedia Nusantara. Interested in website development, mobile app development, UI/UX design, and cybersecurity, I’ve gained valuable hands-on skills both in and outside the classroom. My involvement in various organizations has taught me the importance of teamwork and collaboration, while my academic journey has helped me embrace new ideas and innovation. I am eager to apply my knowledge in real-world projects, contribute to a team, and continue enhance my skills.</p>
+              <a href={process.env.PUBLIC_URL + "/assets/cv/Marvell Christofer-CV.pdf"} download="Marvell Christofer-CV.pdf">
+                <button>Download My CV<ArrowRightCircle size={25} /></button>
+              </a>
               </div>}
-            </TrackVisibility>
-          </Col>
-          <Col xs={12} md={6} xl={5}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
-                </div>}
             </TrackVisibility>
           </Col>
         </Row>
